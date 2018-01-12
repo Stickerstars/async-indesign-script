@@ -1,5 +1,5 @@
 # async-indesign-script
-Talk to ID from node and get a callback.
+Talk to InDesign from node and get a callback. Mac only.
 
 ## Quickstart
 ```
@@ -21,7 +21,7 @@ adobe jsx-script file
 alert(data);
 
 /**
- * Main.
+ * Synchronous code...
  */
 
 var responder = new NodeResponder();
