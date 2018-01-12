@@ -1,0 +1,11 @@
+{
+  "name": "async-indesign-script",
+  "version": "1.0.0",
+  "description": "Talk to InDesign via node and get a callback.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nico Maiwald <nico.maiwald@stickerstars.de>",
+  "license": "ISC"
+}
