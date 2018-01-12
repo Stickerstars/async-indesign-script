@@ -6,7 +6,9 @@ Talk to InDesign from node and get a callback. Mac only.
 const path = require('path');
 const InDesign = require('async-indesign-script');
 
-const id = new InDesign();
+const id = new InDesign({
+    version: 'CC 2018'
+});
 id.run(path.join(__dirname, 'example.jsx'), {
     message: 'hi from node'
 }, function(res) {

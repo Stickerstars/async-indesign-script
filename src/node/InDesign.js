@@ -8,7 +8,7 @@ const config = require('./config');
 /**
  * InDesign constructor (applescript wrapper).
  */
-const InDesign = function () {
+const InDesign = function (setup) {
   /**
    * JSON-String.
    */
@@ -17,6 +17,7 @@ const InDesign = function () {
   this.config = jsesc(JSON.stringify(config), {
     'quotes': 'double'
   });
+  this.version = setup.version;
   this.jobId = null;
 
   /**
@@ -40,7 +41,7 @@ const InDesign = function () {
     this.script = scriptFile;
     this.jobId = this.getJobId();
     const scriptPath = this.script;
-    const script = "tell application \"Adobe InDesign CC 2018\"\r tell script args\r set value name \"data\" value \"" + this.data + "\" set value name \"config\" value \"" + this.config + "\"\r set value name \"job\" value \"" + this.jobId + "\" \r end tell \r activate \r do script \"" + scriptPath + "\" language javascript \r end tell";
+    const script = "tell application \"Adobe InDesign " + this.version + "\"\r tell script args\r set value name \"data\" value \"" + this.data + "\" set value name \"config\" value \"" + this.config + "\"\r set value name \"job\" value \"" + this.jobId + "\" \r end tell \r activate \r do script \"" + scriptPath + "\" language javascript \r end tell";
     applescript.execString(script, (err, rtn) => {
       if (err) {
         console.log(err);
