@@ -1,2 +1,2 @@
-const InDesign = require('./src/InDesign');
+const InDesign = require('./src/node/InDesign');
 module.exports = InDesign;

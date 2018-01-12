@@ -41,7 +41,6 @@ const InDesign = function () {
     this.jobId = this.getJobId();
     const scriptPath = this.script;
     const script = "tell application \"Adobe InDesign CC 2018\"\r tell script args\r set value name \"data\" value \"" + this.data + "\" set value name \"config\" value \"" + this.config + "\"\r set value name \"job\" value \"" + this.jobId + "\" \r end tell \r activate \r do script \"" + scriptPath + "\" language javascript \r end tell";
-    this.progress.start();
     applescript.execString(script, (err, rtn) => {
       if (err) {
         console.log(err);
