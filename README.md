@@ -2,7 +2,7 @@
 Talk to InDesign from node and get a callback. Mac only.
 
 ## Quickstart
-```
+```js
 const path = require('path');
 const InDesign = require('async-indesign-script');
 
@@ -17,7 +17,7 @@ id.run(path.join(__dirname, 'example.jsx'), {
 ```
 
 adobe jsx-script file
-```
+```js
 //@include async-indesign-script/src/jsx/NodeResponder.jsx
 
 alert(data);
