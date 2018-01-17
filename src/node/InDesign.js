@@ -59,7 +59,6 @@ const InDesign = function (setup) {
         const response = JSON.parse(fs.readFileSync(path).toString());
         fs.unlinkSync(path);
         watcher.close();
-        self.progress.stop();
         cb(response);
       });
   }
