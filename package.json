@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nico Maiwald <nico.maiwald@stickerstars.de>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "applescript": "^1.0.0",
+    "chokidar": "^2.0.0"
+  }
 }

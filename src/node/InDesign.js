@@ -1,6 +1,5 @@
 const fs = require('fs');
 const applescript = require('applescript');
-const jsesc = require('jsesc');
 const crypto = require('crypto');
 const chokidar = require('chokidar');
 const config = require('./config');
@@ -14,9 +13,7 @@ const InDesign = function (setup) {
    */
   this.data = '';
   this.script = '';
-  this.config = jsesc(JSON.stringify(config), {
-    'quotes': 'double'
-  });
+  this.config = JSON.stringify(config).replace(/\"/g, '\\"');
   this.version = setup.version;
   this.jobId = null;
 
@@ -34,10 +31,7 @@ const InDesign = function (setup) {
    * @param {*} cb 
    */
   this.run = (scriptFile, data, cb) => {
-    this.data = jsesc(JSON.stringify(data), {
-      'quotes': 'double',
-      minimal: true
-    });
+    this.data = JSON.stringify(data).replace(/\"/g, '\\"');
     this.script = scriptFile;
     this.jobId = this.getJobId();
     const scriptPath = this.script;
